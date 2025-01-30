@@ -1,40 +1,36 @@
 // import Index from "../API/Index";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { fetchAllPlayers } from "../API/Index";
 
 const AllPlayers = () => {
 
-const cohortName = "2410-FTB-ET-WEB-PT";
-const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}`;
+const navigate = useNavigate();
 
+const [singlePlayer, setSinglePlayer] = useState(null);
 const [dogs, setDogs] = useState([]);
-// const [player, setPlayer] = useState(null);
 
 useEffect(() => {
-    const fetchAllPlayers = async () => {
-        try {
-            const response = await fetch(`${API_URL}/players`);
-            const result = await response.json();
-            setDogs(result.data.players);
-        } catch (err) {
-            console.error("Uh oh, trouble fetching players!", err);
-        }
+    const loadData = async () => {
+        const result = await fetchAllPlayers();
+        setDogs(result)
     };
-    fetchAllPlayers();
+    loadData();
 },[]);
 console.log(dogs)
-console.log(dogs.players)
 
 return(
     <main>
     {
         dogs.map((player)=>{
             return(
-                <section>
+                <section key={player.id}>
                     <img src={player.imageUrl} alt={player.name} />
                     <h2 className="text">{player.name}</h2>
                     <h6 className="text">ID Number: {player.id}</h6>
-                    <button className="nav-button" onClick={() => navigate()}>See Details</button>
+                    <button className="nav-button" onClick={() => {
+                        setSinglePlayer(player.id)
+                        }}>See Details</button>
                     <button className="nav-button">Remove Player</button>
                 </section>
                 )
