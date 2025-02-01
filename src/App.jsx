@@ -1,6 +1,7 @@
 import './App.css'
 import AllPlayers from '../components/AllPlayers'
 import SinglePlayer from '../components/SinglePlayer'
+import NewPlayerForm from '../components/NewPlayerForm'
 import { Routes, Route, Link } from 'react-router-dom'
 
 function App() {
@@ -8,14 +9,14 @@ function App() {
     <>
       <header>
         <h1>Puppy Bowl Roster 2025!</h1>
-        <Link to='/'>Home</Link>
+        <Link className='navbar' to='/'>Home</Link>
       </header>
       <div className="wrapper">
       <Routes>
         <Route path='/' element={<AllPlayers />} />
         <Route path='/player/:id' element={<SinglePlayer />} />
       </Routes>
-        <form id="new-player-form"></form>
+        <NewPlayerForm />
       </div>
     </>
     )

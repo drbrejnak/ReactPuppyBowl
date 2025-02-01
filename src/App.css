@@ -41,6 +41,11 @@ header {
   color: white;
 }
 
+.navbar {
+  color: white;
+  text-decoration: none;
+}
+
 img {
   max-height: 100%;
   max-width: 200px;
@@ -142,9 +147,10 @@ section {
   cursor: pointer;
 }
 
-form {
+#new-player-form {
   /* position: fixed;
   right: 2vw; */
+  font-family: 'MyFont';
   display: flex;
   flex-flow: column wrap;
   overflow-wrap: break-word;
@@ -152,7 +158,7 @@ form {
   margin: 5px;
   border: 2px solid black;
   border-radius: 10%;
-  height: 20vw;
+  height: 17em;
   width: 20vw;
   min-width: 300px;
   min-height: 315px;

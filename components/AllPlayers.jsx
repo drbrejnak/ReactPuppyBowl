@@ -29,7 +29,6 @@ return(
                         navigate(`/player/${player.id}`)
                         }}>See Details
                     </button>
-                    <button className="nav-button">Remove Player</button>
                 </section>
                 )
         })

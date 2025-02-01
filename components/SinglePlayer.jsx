@@ -36,7 +36,6 @@ return (
         }
       </h4>
       <Link className="nav-button" to='/'>Home</Link>
-      {/* <button className="nav-button" >Back to All Players</button> */}
     </section>
   </>
 )

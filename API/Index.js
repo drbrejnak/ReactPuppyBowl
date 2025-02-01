@@ -20,3 +20,20 @@ export const fetchSinglePlayer = async (playerId) => {
     console.error(`Oh no, trouble fetching player #${playerId}!`, err);
   }
 };
+
+// const addNewPlayer = async (playerObj) => {
+//   try {
+//     const formData = new FormData($form);
+//     const data = new URLSearchParams(formData);
+
+//     const response = await fetch(`${API_URL}/players`, {
+//       method: "POST",
+//       body: data,
+//     });
+//     const result = await response.json();
+//     fetchSinglePlayer(result.data.newPlayer.id);
+//     init();
+//   } catch (err) {
+//     console.error("Oops, something went wrong with adding that player!", err);
+//   }
+// };
