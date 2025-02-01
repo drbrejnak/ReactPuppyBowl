@@ -1,13 +1,11 @@
-// import Index from "../API/Index";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { fetchAllPlayers } from "../API/Index";
 
 const AllPlayers = () => {
 
 const navigate = useNavigate();
 
-const [singlePlayer, setSinglePlayer] = useState(null);
 const [dogs, setDogs] = useState([]);
 
 useEffect(() => {
@@ -17,7 +15,6 @@ useEffect(() => {
     };
     loadData();
 },[]);
-console.log(dogs)
 
 return(
     <main>
@@ -29,8 +26,9 @@ return(
                     <h2 className="text">{player.name}</h2>
                     <h6 className="text">ID Number: {player.id}</h6>
                     <button className="nav-button" onClick={() => {
-                        setSinglePlayer(player.id)
-                        }}>See Details</button>
+                        navigate(`/player/${player.id}`)
+                        }}>See Details
+                    </button>
                     <button className="nav-button">Remove Player</button>
                 </section>
                 )

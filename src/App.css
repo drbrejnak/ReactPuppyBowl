@@ -43,7 +43,7 @@ header {
 
 img {
   max-height: 100%;
-  max-width: 400px;
+  max-width: 200px;
   width: auto;
   height: 95%;
   object-fit: scale-down;
@@ -55,7 +55,7 @@ img {
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 50px;
+  column-gap: auto;
   grid-auto-rows: 300px;
   margin: 0 auto 0;
   direction: rtl;
@@ -127,6 +127,9 @@ section {
 }
 
 .nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 15%;
   margin-left: 5px;
   margin-top: 5px;
@@ -135,6 +138,8 @@ section {
   background-color: #90e0ef;
   color: #0077b6;
   font-size: x-large;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 form {
