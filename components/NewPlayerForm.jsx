@@ -29,10 +29,14 @@ const NewPlayerForm = () => {
             })
 
             const data = await response.json()
-            console.log(data)
             if(data.success === false){
                 throw new Error(data.message || "unknown error in response")
             }
+            setName("");
+            setBreed("");
+            setStatus("");
+            setImageUrl("");
+            setTeamId("");
             return data
 
         } catch (e) {

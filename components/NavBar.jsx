@@ -6,7 +6,7 @@ const NavBar = ({onDataChange}) => {
 
     return(
         <label>
-            Search &nbsp;
+            Search
             <input
             className='navbar'
             type="text"

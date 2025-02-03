@@ -8,7 +8,6 @@ const SinglePlayer = () => {
 
   const params = useParams()
   const playerId = params.id
-  console.log(playerId)
 
   useEffect(() => {
       const loadData = async (id) => {
@@ -17,7 +16,6 @@ const SinglePlayer = () => {
       };
       loadData(playerId);
   },[playerId]);
-  console.log(singlePlayer)
 
   if(!singlePlayer) {
     return

@@ -14,7 +14,7 @@ const AllPlayers = ({data, onDataChange}) => {
             setDogs(result)
         };
         loadData();
-    });
+    }),[];
 
     if(!dogs.length){
         return(
