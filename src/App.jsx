@@ -2,9 +2,10 @@ import './App.css'
 import AllPlayers from '../components/AllPlayers'
 import SinglePlayer from '../components/SinglePlayer'
 import NewPlayerForm from '../components/NewPlayerForm'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 
 function App() {
+  const location = useLocation()
   return(
     <>
       <header>
@@ -16,7 +17,9 @@ function App() {
         <Route path='/' element={<AllPlayers />} />
         <Route path='/player/:id' element={<SinglePlayer />} />
       </Routes>
+      {location.pathname === '/' && (
         <NewPlayerForm />
+      )}
       </div>
     </>
     )

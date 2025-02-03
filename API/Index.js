@@ -21,19 +21,16 @@ export const fetchSinglePlayer = async (playerId) => {
   }
 };
 
-// const addNewPlayer = async (playerObj) => {
-//   try {
-//     const formData = new FormData($form);
-//     const data = new URLSearchParams(formData);
-
-//     const response = await fetch(`${API_URL}/players`, {
-//       method: "POST",
-//       body: data,
-//     });
-//     const result = await response.json();
-//     fetchSinglePlayer(result.data.newPlayer.id);
-//     init();
-//   } catch (err) {
-//     console.error("Oops, something went wrong with adding that player!", err);
-//   }
-// };
+export const removePlayer = async (playerId) => {
+  try {
+    const response = await fetch(`${API_URL}/players/${playerId}`, {
+      method: "DELETE",
+    });
+    const result = await response.json();
+  } catch (err) {
+    console.error(
+      `Whoops, trouble removing player #${playerId} from the roster!`,
+      err
+    );
+  }
+};

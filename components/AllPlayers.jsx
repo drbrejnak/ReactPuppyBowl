@@ -14,7 +14,7 @@ useEffect(() => {
         setDogs(result)
     };
     loadData();
-},[]);
+});
 
 return(
     <main>

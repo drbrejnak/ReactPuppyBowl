@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchSinglePlayer } from "../API/Index";
+import { fetchSinglePlayer, removePlayer } from "../API/Index";
 import { Link, useParams } from "react-router-dom";
 
 const SinglePlayer = () => {
@@ -36,6 +36,7 @@ return (
         }
       </h4>
       <Link className="nav-button" to='/'>Home</Link>
+      <Link className="nav-button" to='/' onClick={() => removePlayer(playerId)}>Remove Player</Link>
     </section>
   </>
 )
