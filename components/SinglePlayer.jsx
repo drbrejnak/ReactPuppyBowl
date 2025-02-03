@@ -20,7 +20,7 @@ useEffect(() => {
 console.log(singlePlayer)
 
 if(!singlePlayer) {
-  return <div>Loading...</div>
+  return
 }
 
 return (

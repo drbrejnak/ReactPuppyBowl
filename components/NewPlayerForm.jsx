@@ -1,6 +1,4 @@
 import { useState } from "react";
-import AllPlayers from "./AllPlayers";
-import { fetchAllPlayers, fetchSinglePlayer } from "../API/Index";
 
 const cohortName = "2410-FTB-ET-WEB-PT";
 const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/${cohortName}`;

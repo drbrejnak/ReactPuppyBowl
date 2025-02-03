@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchAllPlayers } from "../API/Index";
 
-const AllPlayers = () => {
+const AllPlayers = ({data, onDataChange}) => {
 
 const navigate = useNavigate();
 
@@ -16,21 +16,39 @@ useEffect(() => {
     loadData();
 });
 
+console.log(data)
+
 return(
     <main>
     {
         dogs.map((player)=>{
-            return(
-                <section key={player.id}>
-                    <img src={player.imageUrl} alt={player.name} />
-                    <h2 className="text">{player.name}</h2>
-                    <h6 className="text">ID Number: {player.id}</h6>
-                    <button className="nav-button" onClick={() => {
-                        navigate(`/player/${player.id}`)
-                        }}>See Details
-                    </button>
-                </section>
+            if(data === ""){
+                return(
+                    <section key={player.id}>
+                        <img src={player.imageUrl} alt={player.name} />
+                        <h2 className="text">{player.name}</h2>
+                        <h6 className="text">ID Number: {player.id}</h6>
+                        <button className="nav-button" onClick={() => {
+                            navigate(`/player/${player.id}`)
+                            onDataChange("")
+                            }}>See Details
+                        </button>
+                    </section>
                 )
+            } else if(player.name.toLowerCase().includes(data.toLowerCase())){
+                return(
+                    <section key={player.id}>
+                        <img src={player.imageUrl} alt={player.name} />
+                        <h2 className="text">{player.name}</h2>
+                        <h6 className="text">ID Number: {player.id}</h6>
+                        <button className="nav-button" onClick={() => {
+                            navigate(`/player/${player.id}`)
+                            onDataChange("")
+                            }}>See Details
+                        </button>
+                    </section>
+                )
+            }
         })
     }
     </main>
