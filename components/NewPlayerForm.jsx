@@ -72,7 +72,7 @@ const NewPlayerForm = () => {
                     value={status}
                     required
                     >
-                        <option value="" disabled>Current Status</option>
+                        <option value="" disabled>Current Status:</option>
                         <option value="field">Field</option>
                         <option value="bench">Bench</option>
                     </select>
@@ -95,7 +95,7 @@ const NewPlayerForm = () => {
                     value={teamId}
                     required
                     >
-                        <option value="" disabled>Team Select</option>
+                        <option value="" disabled>Team Select:</option>
                         <option value="2624">Ruff</option>
                     </select>
                 </label>

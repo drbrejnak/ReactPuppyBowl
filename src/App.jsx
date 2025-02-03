@@ -19,12 +19,13 @@ function App() {
     <>
       <header>
         <h1>Puppy Bowl Roster 2025!</h1>
-        {location.pathname === '/' && (
           <div className='navbar-container'>
             <Link className='navbar' to='/'>Home</Link>
+            {location.pathname === '/' && (
             <NavBar data={sharedData} onDataChange={handleDataChange} />
+            )}
           </div>
-        )}
+
       </header>
       <div className="wrapper">
       <Routes>
